@@ -32,6 +32,13 @@
 <input type="button" hidden onclick="siu()" id="botonononononon">
 <input type="button" hidden onclick="ars()" id="botonononononono">
 <input type="button" hidden onclick="usd()" id="botononononononon">
+<input type="button" onclick="nobro()" id="skins" value="Skins">
+<div id="skins_contenido">
+<p id="skins_salir" style="width: 10px; height: 10px; background-color: blue; border: solid;" onclick="skin_salir()">x</p>
+<h1 style="text-align: center;">Skins</h1>
+<div id="dinosaurio" onclick="cambiar_personaje()"></div>
+<div id="prueba" onclick="cambiar_personaje_sus()"></div>
+</div>
 <p id="parrafo">hola</p>
 <div style="position: absolute; margin-left: 130px; margin-top: -95px; width: 200px;">
 <div>
@@ -51,6 +58,34 @@
 <b><p id="best">Mejor puntaje: 0</p></b>
 <p style="position: absolute; margin-top: -100px; margin-left: 400px;"><b>Nota: </b>cuando el dino se choca con un cactus, hay veces que no lo toca.</p>
 <style>
+#skins{
+position: absolute;
+margin-top: -20px;
+margin-left: 900px;
+}
+#skins_contenido{
+display: none;
+position: absolute;
+width: 500px;
+height: 400px;
+background-color: red;
+margin-top: -500px;
+margin-left: 500px;
+}
+#prueba{
+width: 100px;
+height: 100px;
+background-color: green;
+margin-left: 50px;
+margin-top: 40px;
+}
+#dinosaurio{
+width: 100px;
+height: 100px;
+background-color: orange;
+margin-left: 50px;
+margin-top: 40px;
+}
 #inicio{
 border: solid;
 color: blue;
@@ -177,14 +212,26 @@ var estado = 0;
 var estado1 = 0;
 var estado2 = 0;
 var estado3 = 0;
-const cambio1 = "adelante.png";
-const cambio2 = "atras.png";
-const cambio3 = "uh.png";
-const defecto = "estatico.png";
-const agachado1 = "agachado1.png";
-const agachado2 = "agachado2.png";
-const alasup = "alasup.png";
-const alasdown = "alasdown.png";
+const cambio1_sus = "adelante_sus.png";
+const cambio2_sus = "atras_sus.png";
+const cambio3_sus = "uh_sus.png";
+const defecto_sus = "estatico_sus.png";
+const agachado1_sus = "agachado_sus.png";
+const agachado2_sus = "agachado_sus.png";
+const cambio1_dino = "adelante.png";
+const cambio2_dino = "atras.png";
+const cambio3_dino = "uh.png";
+const defecto_dino = "estatico.png";
+const agachado1_dino = "agachado1.png";
+const agachado2_dino = "agachado2.png";
+var cambio1 = cambio1_dino;
+var cambio2 = cambio2_dino;
+var cambio3 = cambio3_dino;
+var defecto = defecto_dino;
+var agachado1 = agachado1_dino;
+var agachado2 = agachado2_dino;
+var alasup = "alasup.png";
+var alasdown = "alasdown.png";
 var otrocontador = 1;
 var otrocontadorx2 = 1;
 var otrocontadorx3 = 1;
@@ -564,6 +611,48 @@ function imposible(){
 	logo = 500;
 	noxd = 5;
 }
+
+function nobro(){
+    var skin = document.getElementById("skins_contenido");
+    skin.style.display = "block";
+}
+
+function cambiar_personaje(){
+cambio1 = cambio1_dino;
+cambio2 = cambio2_dino;
+cambio3 = cambio3_dino;
+defecto = defecto_dino;
+agachado1 = agachado1_dino;
+agachado2 = agachado2_dino;
+
+dino.src = defecto_dino;
+}
+
+function cambiar_personaje_sus(){
+cambio1 = cambio1_sus;
+cambio2 = cambio2_sus;
+cambio3 = cambio3_sus;
+defecto = defecto_sus;
+agachado1 = agachado1_sus;
+agachado2 = agachado2_sus;
+
+dino.src = defecto_sus;
+}
+
+function skin_salir(){
+    var skin = document.getElementById("skins_contenido");
+    skin.style.display = "none";
+}
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
